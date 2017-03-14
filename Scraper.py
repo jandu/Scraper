@@ -49,8 +49,7 @@ def getIngredients(foodpage):
     return clean
 
 
-food = 'http://allrecipes.com/recipe/219164/the-best-parmesan-chicken-bake/?internalSource=popular&referringContentType=home%20page&clickId=cardslot%206'
-johnsons = getIngredients(food)
+
 
 
 
