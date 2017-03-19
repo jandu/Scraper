@@ -49,7 +49,20 @@ def getIngredients(foodpage):
     return clean
 
 
+def getmorelinks(foodpage):
+    uClient = uReq(foodpage)
+    food_html = uClient.read()
+    page_soup = soup(food_html, "html.parser")
+    uClient.close()
+    items = page_soup.findAll("li",{"class","slider-card"})
+    links = []
 
+    count = 0
+    for item in items:
+        links.append("http://allrecipes.com" + item.div.a["href"])
+        print(links[count])
+        count = count +1
+    return links
 
 
 
